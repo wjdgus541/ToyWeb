@@ -1,0 +1,66 @@
+@import "reset.css";
+
+
+.nav {
+    background-color : #253245;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.nav__bar {
+    width: 100%;;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.nav__title {
+    display:flex;
+    align-items: center;
+}
+.nav__title .fa-accusoft {
+    color:#D99362;
+    margin-right: 5px;
+}
+.nav__title__text {
+    color: white;
+    font-weight: 600;
+}
+.nav__menu .fa-bars {
+    color:#D99362;
+}
+.nav__menu span {
+    color: white;
+    margin: 0 5px;
+    display: none;
+}
+.nav__icons{
+    display: none;
+}
+
+@media screen and (min-width:1015px) {
+    .nav__title {
+        width:33%;
+    }
+    .nav__menu {
+        text-align: center;
+    }
+    .nav__menu .fa-bars {
+        display: none;
+    }
+    .nav__menu span {
+        display: inline;
+    }
+    .nav__icons {
+        width:33%;
+        display: flex;
+        color:white;
+        justify-content: flex-end;
+    }
+    .nav__icons i {
+        margin: 0 5px;
+    }
+}
