@@ -1,5 +1,5 @@
 @import "reset.css";
-
+@import "variable.css";
 
 .nav {
     background-color : #253245;
@@ -21,7 +21,7 @@
     align-items: center;
 }
 .nav__title .fa-accusoft {
-    color:#D99362;
+    color:var(--orange);
     margin-right: 5px;
 }
 .nav__title__text {
@@ -29,21 +29,21 @@
     font-weight: 600;
 }
 .nav__bar .fa-bars {
-    color:#D99362;
+    color:var(--orange);
 }
 .nav__menu {
     margin: 5px 0;
+    display: none;
 }
 .nav__menu span {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: white;
-    padding: 5px 5px;
+    padding: 7px 5px;
     margin: 10px 0;
+    width: 100%;
+    text-align: center;
 }
 .nav__menu span:hover {
-    background-color: #D99362;
+    background-color: var(--orange);
     border-radius: 5px;
 }
 .nav__icons {
@@ -51,12 +51,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 .nav__icons i {
     margin: 10px 5px;
     margin-top: 25px;
 }
 
+.nav__menu.active,
+.nav__icons.active {
+    display: flex;
+}
+.nav__menu.active {
+    flex-direction: column;
+    align-items: center;
+}
 @media screen and (min-width:1015px) {
     .nav__bar {
         display: flex;
@@ -72,9 +81,17 @@
     }
     .nav__menu {
         text-align: center;
+        display: flex;
+        margin: 0;
     }
     .nav__menu span {
+        display: flex;
         display: inline;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 5px;
+        padding: 5px;
+        text-align: unset;
     }
     
     .nav__icons {
