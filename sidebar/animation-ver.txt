@@ -1,0 +1,104 @@
+input[id="menuicon"] {
+    display:none;
+}
+input[id="menuicon"] + label {
+    display:block;
+    width:60px;
+    height:40px;
+    position:relative;
+    cursor:pointer;
+}
+input[id="menuicon"] +label span {
+    display:block;
+    position:absolute;
+    width: 100%;
+    height: 5px;
+    border-radius: 30px;
+    background:#000;
+    transition:all 0.35;
+}
+@keyframes first {
+    from {
+        top:50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+    to {
+    top:0;
+    }
+}
+@keyframes mid {
+    from {
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        transform:translateY(-50%);
+    }
+}
+@keyframes last {
+    from {
+        bottom:50%;
+        transform: translateY(50%) rotate(-45deg);
+    }
+    to {
+    bottom:0;
+    }
+}
+input[id="menuicon"] +label span:nth-child(1) {
+    animation: first 0.3s ease-in-out forwards;
+}
+input[id="menuicon"] +label span:nth-child(2) {
+    animation: mid 0.3s ease forwards;
+}
+input[id="menuicon"] +label span:nth-child(3) {
+    animation: last 0.3s ease-in-out forwards;
+}
+@keyframes first-checked {
+    from {
+        top:0;
+    }
+    to {
+        top:50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+}
+@keyframes mid-checked {
+    from {
+        top: 50%;
+        transform:translateY(-50%);
+    }
+    to {
+        opacity: 0;
+    }
+}
+@keyframes last-checked {
+    from {
+        bottom:0;
+    }
+    to {
+        bottom:50%;
+        transform: translateY(50%) rotate(-45deg);
+    }
+}
+input[id="menuicon"]:checked + label span:nth-child(1) {
+    animation: first-checked 0.3s ease-in-out forwards;
+}
+input[id="menuicon"]:checked + label span:nth-child(2) {
+    animation: mid-checked 0.3s ease forwards;
+}
+input[id="menuicon"]:checked + label span:nth-child(3) {
+    animation: last-checked 0.3s ease-in-out forwards;
+}
+
+div[class="sidebar"] {
+    width:300px;
+    height: 100%;
+    background: rgb(121, 121, 227);
+    position: fixed;
+    top:0;
+    left:-300px;
+    z-index: 1;
+    transition: all 0.35s;
+}
+
+input[id="menuicon"]:checked
